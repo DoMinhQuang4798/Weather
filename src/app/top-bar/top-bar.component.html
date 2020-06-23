@@ -1,0 +1,14 @@
+<div class="q-topbar-wrapper">
+  <div class="q-topbar">
+    <div class="q-title">App Weather</div>
+    <form (ngSubmit)="submit()" class="q-form">
+      <label>
+        <input class="q-search-bar" type="text" name="city" [(ngModel)]="city" placeholder="Nhập tên thành phố">
+      </label>
+
+      <button class="q-btn-search" type="submit">
+        <i class="fas fa fa-search"></i>
+      </button>
+    </form>
+  </div>
+</div>

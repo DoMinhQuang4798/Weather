@@ -1,0 +1,68 @@
+<div *ngIf="!weather.city"
+     class="q-current-weather-no-data"
+     [ngStyle]="{
+     'background' : 'url(assets/image/bgi.png)',
+      'background-repeat': 'no-repeat',
+      'background-size' : 'cover'
+      }">
+  <span>Enter location to find weather info.</span>
+</div>
+
+<div *ngIf="weather.city" class="q-current-weather-data">
+  <div class="q-current-weather-data-info">
+    <div *ngIf="weather.isDay" class="q-icon-is-day">
+      <i class="fas fa fa-7x fa-sun sun"></i>
+    </div>
+
+    <div *ngIf="!weather.isDay" class="q-icon-is-day">
+      <i class="fas fa fa-7x fa-moon moon"></i>
+    </div>
+
+    <div *ngIf="weather.conditions === 'Clouds'">
+      <i class="fas fa fa-6x fa-cloud weather-icon"></i>
+    </div>
+
+    <div *ngIf="weather.conditions === 'Rain'">
+      <i class="fas fa fa-6x fa-cloud-rain weather-icon"></i>
+    </div>
+
+    <div *ngIf=" weather.conditions === 'Snow'">
+      <i class="fas fa fa-6x fa-snowflake weather-icon"></i>
+    </div>
+    <div class="q-text-style">
+      <span>City:</span>
+
+      <span>{{weather.city}}</span>
+    </div>
+
+    <div class="q-text-style">
+      <span>Conditions:</span>
+
+      <span>{{weather.conditions}}</span>
+    </div>
+
+    <div class="q-text-style">
+      <span>Temperature: </span>
+
+      <span> {{weather.temperature}}°C</span>
+    </div>
+
+    <div class="q-text-style">
+      <span>Humidity:</span>
+
+      <span>{{weather.humidity}}%</span>
+    </div>
+
+    <div class="q-text-style">
+      <span>Cloud:</span>
+
+      <span>{{weather.cloud}}%</span>
+    </div>
+
+    <div class="q-text-style">
+      <span>Local time:</span>
+
+      <span>{{weather.dt | date:'MMM d, y, h:mm a'}}</span>
+    </div>
+  </div>
+</div>

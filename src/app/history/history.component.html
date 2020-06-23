@@ -1,0 +1,25 @@
+
+<div class="q-history-wrapper">
+
+  <div class="q-history">
+    <button (click)="weatherService.removeCityName()" class="q-history-btn">Clear History</button>
+
+    <div class="q-history-content">
+        <a *ngFor="let city of cityArr | paginate: {itemsPerPage: 5, currentPage: page}"
+           class="q-history-content-item"
+           routerLink="/home-page"
+           [queryParams]="{cityName: city}">
+          <span>{{city}}</span>
+        </a>
+    </div>
+
+    <div class="q-history-pagination-wrapper">
+      <pagination-controls (pageChange)="page = $event"
+                           maxSize="5"
+                           directionLinks="true"
+                           autoHide="false">
+      </pagination-controls>
+    </div>
+
+  </div>
+</div>

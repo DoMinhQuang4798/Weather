@@ -1,0 +1,60 @@
+.q-current-weather-no-data {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 48px;
+  font-weight: bolder;
+}
+
+.q-current-weather-data {
+  background: linear-gradient(180deg, rgba(0, 0, 0, 1) 0%, rgba(8, 7, 42, 1) 75%, rgb(8, 10, 63) 100%);
+  color: white;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.q-text-style {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 50px;
+}
+
+.q-current-weather-data-info {
+  width: 500px
+}
+
+.q-icon-is-day {
+  display: flex;
+  justify-content: center;
+}
+
+.sun {
+  color: yellow;
+}
+
+.moon {
+  color: white;
+}
+
+.weather-icon {
+  margin-top: -50px;
+  padding-bottom: 140px;
+  filter: drop-shadow(1px 1px 5px #68afc5);
+  animation-name: movementIcon;
+  animation-iteration-count: infinite;
+  animation-duration: 6s;
+  animation-timing-function: ease-in-out;
+  animation-direction: alternate;
+}
+
+@keyframes movementIcon {
+  from {
+    margin-left: 100px
+  }
+  to {
+    margin-left: 300px
+  }
+}
